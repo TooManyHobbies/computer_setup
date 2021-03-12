@@ -16,6 +16,6 @@ printf '  echo $newintelbrightness >> /sys/class/backlight/intel_backlight/brigh
 printf 'fi\n' >> /usr/sbin/writeintelbacklight.sh
 printf 'exit 0\n' >> /usr/sbin/writeintelbacklight.sh
 printf '\n' >> /usr/sbin/writeintelbacklight.sh
-chmod +x /usr/sbin/writeintelbacklight.sh
+chmod +x testfile
 
 printf 'ACTION=="change", SUBSYSTEM=="backlight", RUN+="/usr/sbin/writeintelbacklight.sh"\n' > /etc/udev/rules.d/99-writeintelbacklight.rules
