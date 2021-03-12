@@ -22,3 +22,4 @@ chmod +x testfile
 
 # Redirect system calls to the script above
 printf 'ACTION=="change", SUBSYSTEM=="backlight", RUN+="/usr/sbin/writeintelbacklight.sh"\n' > /etc/udev/rules.d/99-writeintelbacklight.rules
+
