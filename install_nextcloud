@@ -1,0 +1,17 @@
+#!/bin/bash 
+# Install Appimages 
+# Gearlever and AppImageLauncher both manage appimages. Both have a cli for scripts.  
+# Try AppImageLauncher first.  
+# Download appimages 
+# Put them in ~/bin/appimages, but need to check for existance  of # ~/bin, and if it doesn't exist, create it.
+# Also, check for the file's existance before downloading it.
+DIRECTORY="/home/john/bin/appimages"
+if [ ! -d "$DIRECTORY" ]; then
+	mkdir "$DIRECTORY"
+fi
+wget -qO ~/bin/appimages/joplin.appimage "https://objects.joplinusercontent.com/v3.4.12/Joplin-3.4.12.AppImage?source=JoplinWebsite&type=New"
+wget -qO ~/bin/appimages/nextcloud-desktop.appimage "https://github.com/nextcloud-releases/desktop/releases/download/v4.0.1/Nextcloud-4.0.1-x86_64.AppImage"
+# Consider using AppimageLauncher from the AUR. It integrates the appimage on first run.
+# It also has a cli. Website: https://github.com/TheAssassin/AppImageLauncher?tab=readme-ov-file
+# flatpak run it.mijorus.gearlever --integrate ~/Appimages/joplin.appimage
+# flatpak run it.mijorus.gearlever --integrate ~/Appimages/nextcloud-desktop.appimage
