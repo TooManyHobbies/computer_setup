@@ -1,0 +1,16 @@
+#!/bin/bash
+
+sudo garuda-update
+install_repo_packages
+install_appimagelauncher
+install_nextcloud
+install_joplin
+install_flatpaks
+
+# Need to move my user scripts to 
+# Need to write scripts to install my shortcuts
+# Need script if possible to set up kwin
+# My windows have no borders, and autofocus on
+# mouse over.
+
+

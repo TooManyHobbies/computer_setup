@@ -1,0 +1,35 @@
+#!/bin/bash
+cat << EOT  
+####### Applications
+
+Browser             mod+alt+b  
+KeepassXC           mod+alt+p  
+Mail                mod+alt+m
+Signal              mod+alt+s  
+Terminal            mod+enter  
+Joplin Notes        mod+alt+n
+File Manager        mod+alt+f
+
+####### Windows
+Full Screen         mod+f
+Maximize            mod+m
+Close               mod+q
+
+####### Workspace
+Move to workspace           mod[1-6]
+Move window to workspace    mod+shift+[1-6]
+Move window to monitor      mod+shift+[arrow keys]
+
+####### Brave Browser
+Next open tab       ctrl+tab  
+Previous open tab   ctrl+shift+tab
+New tab             ctrl+t
+Close tab           ctrl-w
+Top of page         fn+left arrow
+Bottom of page      fn+right arrow
+
+#######  Other
+Lock Screen         mod+l
+EOT
+
+

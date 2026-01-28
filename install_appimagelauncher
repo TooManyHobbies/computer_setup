@@ -1,0 +1,33 @@
+#!/bin/bash
+
+DIRECTORY="/home/john/bin/appimages"
+if [ ! -d "$DIRECTORY" ]; then
+	mkdir "$DIRECTORY"
+fi
+
+# Install appimagelauncher from AUR
+paru -S --noconfirm appimagelauncher;echo 'PAKtC'
+
+
+# The config file that controlls the install directory
+# to scan doesn't exixt yet. Here we create it, and 
+# point it to the desired directory. 
+systemctl --user stop appimagelauncherd
+
+# :cat ~/.config/appimagelauncher.cfg | sed 's/^destination=.*$/destination=~\/bin\/appimages/' > ~/.config/temp.txt
+
+#mv ~/.config/temp.txt ~/.config/appimagelauncher.cfg
+
+cat <<EOT >> /home/john/.config/appimagelauncher.cfg
+[AppImageLauncher]
+ask_to_move=true
+destination=/home/john/bin/appimages
+enable_daemon=true
+
+[appimagelauncherd]
+#additional_directories_to_watch=~/otherApplications:/even/mor
+e/applications
+#monitor_mounted_filesystems=false
+EOT
+
+systemctl --user restart appimagelauncherd

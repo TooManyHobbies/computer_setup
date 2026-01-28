@@ -1,0 +1,25 @@
+!/bin/bash 
+
+# Install Appimages 
+# Gearlever and AppImageLauncher both manage appimages. Both have a cli for scripts.  
+# Try AppImageLauncher first.  
+# Download appimages 
+# Put them in ~/bin/appimages, but need to check for existance  of # ~/bin, and if it doesn't exist, create it.
+# Also, check for the file's existance before downloading it.
+#
+
+
+DIRECTORY="/home/john/bin/appimages"
+if [ ! -d "$DIRECTORY" ]; then
+	mkdir "$DIRECTORY"
+fi
+
+
+curl -s https://api.github.com/repos/laurent22/joplin/releases/latest \
+| grep 'browser_download_url.*AppImage"' \
+| cut -d : -f 2,3 \
+| tr -d \" \
+| wget -i - -P $DIRECTORY
+ 
+
+

@@ -1,0 +1,29 @@
+#!/bin/bash
+declare -a packages=(
+"wget"
+"thunderbird"
+"protonmail-bridge"
+"backintime"
+"signal-desktop"
+"keepassxc"
+"ungoogled-chromium-bin"
+"protonmail-bridge"
+"simplescreenrecorder"
+"audacious"
+"octopi"
+"cronie"
+"docker"
+"podman"
+"distrobox"
+"rapid-photo-downloader"
+"gimp"
+"librecad"
+"libreoffice-fresh"
+"caligula"
+"flatpak"
+)
+
+for i in "${packages[@]}"
+do
+	pacman -S --noconfirm --needed "$i"
+done
