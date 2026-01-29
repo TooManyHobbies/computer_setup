@@ -23,5 +23,17 @@ curl -s https://api.github.com/repos/nextcloud-releases/desktop/releases/latest 
 | wget -i - -P $DIRECTORY
  
 
-# Next setup the symlink between the nextcloud sync folder and the local documents folder. This is done in the
-# fstab folder.
+# Next setup the bind mount between the nextcloud sync folder and the local documents folder. This is done in the
+# fstab file.
+
+# Create Nextcloud file directory
+if [ ! -d "/home/john/Nextcloud" ]; then
+	mkdir "/home/john/Nextcloud" 
+if [ ! -d "/home/john/Nextcloud/Encrypted_On_Server_Documents" ]; then
+	mkdir "/home/john/Nextcloud/Encrypted_On_Server_Documents"
+
+if (! grep "Nextcloud" "/etc/fstab" )
+	echo "Writing fstab"
+	# Add bash sudo to this command 
+	sudo bash -c "echo /home/john/Nextcloud/Encrypted_On_Server_Documents /home/john/Documents none bind >> /etc/fstab"
+fi
