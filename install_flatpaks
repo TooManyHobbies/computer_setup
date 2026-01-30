@@ -5,5 +5,5 @@
 flatpak install flathub -y io.sourceforge.xtrkcad_fork.xtrkcad
 flatpak install flathub -y org.blender.Blender
 flatpak install flathub -y com.obsproject.Studio
-flatpak install flathub -y oorg.kde.kdenlive
-flatpak install flathub -y :;:com.github.wwmm.easyeffects
+flatpak install flathub -y org.kde.kdenlive
+flatpak install flathub -y com.github.wwmm.easyeffects

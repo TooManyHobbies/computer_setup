@@ -29,11 +29,15 @@ curl -s https://api.github.com/repos/nextcloud-releases/desktop/releases/latest 
 # Create Nextcloud file directory
 if [ ! -d "/home/john/Nextcloud" ]; then
 	mkdir "/home/john/Nextcloud" 
+fi
+
 if [ ! -d "/home/john/Nextcloud/Encrypted_On_Server_Documents" ]; then
 	mkdir "/home/john/Nextcloud/Encrypted_On_Server_Documents"
+fi
 
-if (! grep "Nextcloud" "/etc/fstab" )
+if ( ! grep "Nextcloud" "/etc/fstab" ); then
 	echo "Writing fstab"
 	# Add bash sudo to this command 
 	sudo bash -c "echo /home/john/Nextcloud/Encrypted_On_Server_Documents /home/john/Documents none bind >> /etc/fstab"
+	echo "Done writing fstab"
 fi
