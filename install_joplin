@@ -1,9 +1,6 @@
 !/bin/bash 
 
-# Install Appimages 
-# Gearlever and AppImageLauncher both manage appimages. Both have a cli for scripts.  
-# Try AppImageLauncher first.  
-# Download appimages 
+# Install Joplin 
 # Put them in ~/bin/appimages, but need to check for existance  of # ~/bin, and if it doesn't exist, create it.
 # Also, check for the file's existance before downloading it.
 #
@@ -11,7 +8,7 @@
 
 DIRECTORY="/home/john/bin/appimages"
 if [ ! -d "$DIRECTORY" ]; then
-	mkdir "$DIRECTORY"
+	mkdir -p "$DIRECTORY"
 fi
 
 

@@ -5,6 +5,7 @@ sudo garuda-update
 ./install_appimagelauncher
 ./install_nextcloud
 ./install_joplin
+./install_brave
 ./install_flatpaks
 
 # Need to move my user scripts to 

@@ -25,5 +25,5 @@ declare -a packages=(
 
 for i in "${packages[@]}"
 do
-	pacman -S --noconfirm --needed "$i"
+	sudo pacman -S --noconfirm --needed "$i"
 done

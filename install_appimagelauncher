@@ -4,7 +4,7 @@ echo "Installing appimagelauncer"
 
 DIRECTORY="/home/john/bin/appimages"
 if [ ! -d "$DIRECTORY" ]; then
-	mkdir "$DIRECTORY"
+	mkdir -p "$DIRECTORY"
 fi
 
 # Install appimagelauncher from AUR

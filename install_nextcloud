@@ -1,9 +1,6 @@
 #!/bin/bash 
 
-# Install Appimages 
-# Gearlever and AppImageLauncher both manage appimages. Both have a cli for scripts.  
-# Try AppImageLauncher first.  
-# Download appimages 
+# Install Nextcloud Appimage 
 # Put them in ~/bin/appimages, but need to check for existance  of # ~/bin, and if it doesn't exist, create it.
 # Also, check for the file's existance before downloading it.
 #
@@ -11,7 +8,7 @@
 
 DIRECTORY="/home/john/bin/appimages"
 if [ ! -d "$DIRECTORY" ]; then
-	mkdir "$DIRECTORY"
+	mkdir -p "$DIRECTORY"
 fi
 
 # wget -qO ~/bin/appimages/nextcloud-desktop.appimage "https://github.com/nextcloud-releases/desktop/releases/download/v4.0.1/Nextcloud-4.0.1-x86_64.AppImage"
@@ -28,11 +25,7 @@ curl -s https://api.github.com/repos/nextcloud-releases/desktop/releases/latest 
 
 # Create Nextcloud file directory
 if [ ! -d "/home/john/Nextcloud" ]; then
-	mkdir "/home/john/Nextcloud" 
-fi
-
-if [ ! -d "/home/john/Nextcloud/Encrypted_On_Server_Documents" ]; then
-	mkdir "/home/john/Nextcloud/Encrypted_On_Server_Documents"
+	mkdir "/home/john/Nextcloud/Encrypted_On_Server_Documents" 
 fi
 
 if ( ! grep "Nextcloud" "/etc/fstab" ); then
