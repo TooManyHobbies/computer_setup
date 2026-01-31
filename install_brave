@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Install Brave Browser
+
+# Should check for paru, but for now assume it is installed
+echo "Installing Brave Browser"
+
+paru -S --noconfirm brave-bin;echo 'PAKtC'
+
